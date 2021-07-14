@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="mb-30">
+    <button routerLink="/dashboard" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>Audit Management System</span>
+    <span class="example-spacer"></span>
+    <a *ngIf="login.isLoggedIn()"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">{{login.getUser()}}</a>
+    <button (click)="userLogout()" mat-icon-button class="example-icon logout" aria-label="Example logout">
+      <mat-icon>logout</mat-icon>
+    </button>
+  <!--  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>-->
+  </mat-toolbar>

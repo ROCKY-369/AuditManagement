@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <mat-card>
+      <div class="container">
+        <mat-list>
+          <div mat-subheader>Audit History:</div>
+          <mat-list-item *ngFor="let h of auditHistoryList">
+            <div class="container-fluid">
+              <div [ngClass]="{
+                  greenClass: h.projectExecutionStatus,
+                  redClass: !h.projectExecutionStatus
+                }">
+                <mat-card>
+                  <span>
+                    <h2>{{ h.auditId }}</h2>
+                  </span>
+                  <mat-card-header>
+                    <mat-card-title>{{ h.projectName }}</mat-card-title>
+                  </mat-card-header>
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <div mat-line>
+                          <b>Project Manager Name :</b> {{ h.projectManagerName }}
+                        </div>
+                      </td>
+                      <td>
+                        <div mat-line><b>Application Owner Name :</b> {{ h.applicationOwnerName }}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div mat-line><b>Audit Date :</b>
+                          {{ h.auditDate }}
+                        </div>
+                      </td>
+                      <td>
+                        <div mat-line><b>Audit Type :</b> {{ h.auditType }}</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <div [ngClass]="{
+                    greenClass: h.projectExecutionStatus,
+                    redClass: !h.projectExecutionStatus
+                  }"><b>Remedial Action : {{ h.remedialActionDuration }}</b></div>
+                </mat-card>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-card>
+  </div>
+</div>
