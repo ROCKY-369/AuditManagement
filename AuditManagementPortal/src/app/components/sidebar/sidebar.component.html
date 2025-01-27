@@ -1,0 +1,15 @@
+
+<mat-card>
+    <div class="mb-300">
+    <mat-action-list>
+        <h1>Hi, {{login.getUser()}}</h1>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/dashboard/submitaudit">
+            <mat-icon mat-list-icon>check</mat-icon>Submit New Audit</button>
+            <button mat-list-item routerLink="/dashboard/audithistory">
+                <mat-icon mat-list-icon>history</mat-icon>Show Audit History</button>
+            <button mat-list-item (click)="userLogout()">
+                <mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+    </mat-action-list>
+    </div>
+</mat-card>
